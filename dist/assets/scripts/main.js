@@ -80,6 +80,16 @@ var app = {
             };
 
         })
+        //click mp3 box
+        $('.mp3-box').click(function(){
+            $(this).toggleClass('active');
+            if(!audio.paused){
+                $('#audio')[0].pause();
+            }else{
+                $('#audio')[0].play();
+            }
+
+        })
 
         //提示信息弹出 click
         $('.alert_box').click(function(){
@@ -87,17 +97,19 @@ var app = {
             app.mySwiper.slideNext();
             lockSwiper()
             error_sum = -1;
-            $('.tishi').html("您答错了"+Count_sum+"次")
+            $('.tishi').html("太羞耻了！作为一个资深火影迷，我竟然被岸本老师亲手扇了"+Count_sum+"巴掌")
         })
 
         //  first time play BGM
         var initSound = function () {
             //  delay play
-            //$('#audio')[0].play();
+            $('#audio')[0].play();
 
             document.removeEventListener('touchstart', initSound, false);
         };
         document.addEventListener('touchstart', initSound, false);
+
+
 
     }
 }

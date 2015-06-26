@@ -143,6 +143,22 @@ input {
 .scene.swiper-slide-active .people—img {
   -webkit-animation: bounceIn 1s 1;
 }
+.mp3-box {
+  width: 4.3%;
+  position: absolute;
+  right: 2.6%;
+  top: 1.8%;
+  z-index: 999;
+  -webkit-animation: circle 14s infinite linear;
+}
+.mp3-box.active {
+  width: 4.3%;
+  position: absolute;
+  right: 2.6%;
+  top: 1.8%;
+  z-index: 999;
+  -webkit-animation: none;
+}
 .bg_zz {
   background: #000;
   position: absolute;
@@ -159,6 +175,14 @@ input {
   left: -5000px;
 }
 /* animation */
+@-webkit-keyframes circle {
+  from {
+    -webkit-transform: rotateZ(-360deg);
+  }
+  to {
+    -webkit-transform: rotateZ(0deg);
+  }
+}
 @-webkit-keyframes bounceIn {
   0%,
   20%,
