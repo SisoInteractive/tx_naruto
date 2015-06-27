@@ -50,7 +50,10 @@ var app = {
         //replay btn
         $('.reply').click(function(){
             var that = $(this).parent();
+            var This = $(this);
             that.find('.reply').removeClass('active');
+            $('.active-text').hide();
+            This.find('.active-text').show();
             $(this).addClass('active');
             if($(this).hasClass('dn_l')){
                 that.find('.people—img').hide();
@@ -76,6 +79,7 @@ var app = {
                     Count_sum += error_sum;
                     that.find('.bg_zz').fadeIn();
                     that.find('.false_box').fadeIn();
+
                 }
             };
 
@@ -97,13 +101,13 @@ var app = {
             app.mySwiper.slideNext();
             lockSwiper()
             error_sum = -1;
-            $('.tishi').html("太羞耻了！作为一个资深火影迷，我竟然被岸本老师亲手扇了"+Count_sum+"巴掌")
+            $('.tishi').html( Count_sum )
         })
 
         //  first time play BGM
         var initSound = function () {
             //  delay play
-            $('#audio')[0].play();
+            //$('#audio')[0].play();
 
             document.removeEventListener('touchstart', initSound, false);
         };
