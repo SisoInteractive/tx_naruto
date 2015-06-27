@@ -102,12 +102,18 @@ var app = {
             lockSwiper()
             error_sum = -1;
             $('.tishi').html( Count_sum )
+            if(Count_sum == 0){
+                $('#title').html('!作为一个资深火影迷,我竟然全部答对了')
+            }else{
+                $('#title').html('太羞耻了!作为一个资深火影迷,我竟然被岸本老师亲手打了'+ Count_sum + '巴掌')
+            }
+
         })
 
         //  first time play BGM
         var initSound = function () {
             //  delay play
-            //$('#audio')[0].play();
+            $('#audio')[0].play();
 
             document.removeEventListener('touchstart', initSound, false);
         };
