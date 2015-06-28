@@ -19,9 +19,11 @@
 </head>
 <body>
 
-<!-- audio -->
-<audio controls loop id="audio" style="position: absolute;left: -1000px;">
-    <source src="assets/audio/bgm.mp3" type="audio/mpeg" >
+<!-- 背景音乐 -->
+<audio src="assets/audio/bgm.mp3" autoplay loop controls="controls" id="audio" style="display: none;">
+</audio>
+
+<audio src="assets/audio/button-20.mp3" controls="controls" id="audio2" style="display: none;">
 </audio>
 
 <img src="assets/images/m-img.png" class="mp3-box">
@@ -190,9 +192,8 @@
             </div>
             <!-- bg 遮罩 -->
 
-            <img src="assets/images/zan.png" style="width: 100%;top: 13.8%" class="true_box alert_box">
-            <div class="false_box alert_box">
-                <img src="assets/images/error.png" style="width: 100%;top: 13.8%">
+            <div class="false_box alert_box true_box">
+                <img src="assets/images/error.png" style="width: 100%;top: 13.8%;">
                 <img src="assets/images/p4-alert-text.jpg" style="width: 64.2%;top: 20%;left: 16.5%">
             </div>
             <div class="bg_zz">

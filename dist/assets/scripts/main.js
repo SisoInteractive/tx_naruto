@@ -5,8 +5,7 @@
 var app = {
     create: function () {
         //  create slider
-        var slidelen = $('.swiper-slide').length;
-
+        var app_index = 1;//now Swiper inedx
         app.mySwiper = new Swiper('.swiper-container', {
             direction : 'vertical',
             effect : 'fade',
@@ -46,9 +45,12 @@ var app = {
 
         //count Sum
         var Count_sum = 0; //统计打错结果
-
         //replay btn
         $('.reply').click(function(){
+            console.log( app_index );
+
+            console.log($('.swiper-slide').eq(app_index).html())
+
             var that = $(this).parent();
             var This = $(this);
             that.find('.reply').removeClass('active');
@@ -70,8 +72,11 @@ var app = {
 
         //click btn_define
         $('.btn_define').click(function(){
+
             var that = $(this).parent();
+
             if(error_sum!=-1){
+
                 if(error_sum==0){
                     that.find('.bg_zz').fadeIn();
                     that.find('.true_box').fadeIn();
@@ -79,9 +84,14 @@ var app = {
                     Count_sum += error_sum;
                     that.find('.bg_zz').fadeIn();
                     that.find('.false_box').fadeIn();
-
                 }
             };
+
+            var false_box_dspaly = that.find('.false_box').css('display')
+            if( false_box_dspaly == 'block' ){
+                var audioEle2 = document.getElementById("audio2");
+                audioEle2.play();
+            }
 
         })
         //click mp3 box
@@ -95,11 +105,14 @@ var app = {
 
         })
 
+
         //提示信息弹出 click
         $('.alert_box').click(function(){
             app.mySwiper.unlockSwipes();
             app.mySwiper.slideNext();
             lockSwiper()
+            app_index = app.mySwiper.activeIndex;
+
             error_sum = -1;
             $('.tishi').html( Count_sum )
             if(Count_sum == 0){
