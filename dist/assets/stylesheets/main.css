@@ -14,6 +14,7 @@ html {
 body {
   height: 100%;
   overflow: hidden;
+  background: #2f2e2c;
 }
 a {
   text-decoration: none;
