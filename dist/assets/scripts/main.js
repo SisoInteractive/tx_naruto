@@ -3,7 +3,94 @@
 "use strict";
 
 var app = {
+    loadimg: function () {
+        var imgSrcArr = [
+            'bg.png',
+            'btn-2.png',
+            'btn-bg.png',
+            'btn-bg2.png',
+            'btn.png',
+            'error.png',
+            'hengfu.png',
+            'index.jpg',
+            'lm01-2.png',
+            'lm01.png',
+            'lm02-1.png',
+            'logo.png',
+            'm-img.png',
+            'mz01.png',
+            'mz02.png',
+            'p1-1.png',
+            'p1-A.png',
+            'p1-alert-text.jpg',
+            'p1-B-alert.png',
+            'p1-B.png',
+            'p1-bg.jpg',
+            'p1-title.png',
+            'p2-1.png',
+            'p2-A.png',
+            'p2-alert-text.jpg',
+            'p2-B.png',
+            'p2-bg.jpg',
+            'p2-title.png',
+            'p3-1.png',
+            'p3-A.jpg',
+            'p3-alert-text.jpg',
+            'p3-B.jpg',
+            'p3-title.png',
+            'p4-1.png',
+            'p4-A.png',
+            'p4-alert-text.jpg',
+            'p4-B-alert.png',
+            'p4-B.png',
+            'p4-bg.jpg',
+            'p4-title.png',
+            'p6-bg.png',
+            'p6-text.png',
+            'sy01-1.png',
+            'sy01.png',
+            'sy02-1.png',
+            'sy02.png',
+            'xh01-1.png',
+            'xh01.png',
+            'xh02-1.png',
+            'xh02.png',
+            'yun-l.png',
+            'yun-r.png',
+            'zan.png'
+        ];
+        var imgPath = "assets/images/";
+        var imgLength = imgSrcArr.length;
+        var loadedLength = 0;
+        var isLoaded = false;
+
+        for (var i = 0; i < imgLength; i++) {
+            var img = new Image();
+            img.src = imgPath + imgSrcArr[i];
+
+            img.onload = function () {
+                loadedLength++;
+
+                /* check img load progress */
+                if (checkIsAllLoaded() && isLoaded == false) {
+                    var runningTimerEnd = new Date();
+                    isLoaded = true;
+                    app.create();
+                    $('.swiper-container').fadeIn();
+                }
+
+            };
+        }
+
+        function checkIsAllLoaded () {
+            var loadedRate = 0.8;
+            return loadedLength / imgLength <= imgLength*loadedRate;
+        }
+    },
+
     create: function () {
+        //load img
+
         //  create slider
         var app_index = 1;//now Swiper inedx
         app.mySwiper = new Swiper('.swiper-container', {
@@ -13,7 +100,7 @@ var app = {
 
             // init
             onInit: function () {
-                $('.scene').eq(0).addClass('active');
+                //$('.scene').eq(0).addClass('active');
 
             },
 
@@ -138,5 +225,5 @@ var app = {
 }
 $(function (){
     // init app
-    app.create();
+    app.loadimg();
 });
