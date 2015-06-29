@@ -4,6 +4,7 @@
 
 var app = {
     loadimg: function () {
+
         var imgSrcArr = [
             'bg.png',
             'btn-2.png',
@@ -75,8 +76,8 @@ var app = {
                 if (checkIsAllLoaded() && isLoaded == false) {
                     var runningTimerEnd = new Date();
                     isLoaded = true;
-                    app.create();
                     $('.swiper-container').fadeIn();
+                    app.create()
                 }
 
             };
@@ -101,11 +102,6 @@ var app = {
             // init
             onInit: function () {
                 //$('.scene').eq(0).addClass('active');
-
-            },
-
-            //  router
-            onTransitionEnd: function (swiper) {
 
             }
         });
