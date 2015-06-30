@@ -144,11 +144,13 @@ var app = {
                 that.find('.people—img').hide();
                 that.find('.A_img').fadeIn();
                 that.find('.p1-B-alert').removeClass('active');
+                that.find('.p2-A-alert').addClass('active');
                 error_sum = 0;
             }else{
                 that.find('.people—img').hide();
                 that.find('.B_img').fadeIn();
                 that.find('.p1-B-alert').addClass('active');
+                that.find('.p2-A-alert').removeClass('active');
                 error_sum = 1;
             }
         })
@@ -211,7 +213,7 @@ var app = {
         //  first time play BGM
         var initSound = function () {
             //  delay play
-            $('#audio')[0].play();
+            //$('#audio')[0].play();
 
             document.removeEventListener('touchstart', initSound, false);
         };
