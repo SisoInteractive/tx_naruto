@@ -180,10 +180,12 @@ var app = {
         //click mp3 box
         $('.mp3-box').click(function(){
             $(this).toggleClass('active');
+            $(this).attr('src','assets/images/m-img-active.png')
             if(!audio.paused){
                 $('#audio')[0].pause();
             }else{
                 $('#audio')[0].play();
+                $(this).attr('src','assets/images/m-img.png')
             }
 
         })
