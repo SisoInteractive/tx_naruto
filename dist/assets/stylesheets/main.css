@@ -457,7 +457,7 @@ input {
 }
 @-webkit-keyframes bounceIn2 {
   0% {
-    opacity: .9;
+    opacity: 1;
     -webkit-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1);
   }
@@ -466,7 +466,7 @@ input {
     transform: scale3d(0.95, 0.95, 0.95);
   }
   100% {
-    opacity: .7;
+    opacity: 1;
     -webkit-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1);
   }
