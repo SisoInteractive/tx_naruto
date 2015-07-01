@@ -170,6 +170,11 @@ input {
   top: 19.2%;
   left: 71%;
 }
+.people-bg {
+  -webkit-animation: bounceIn6 1s infinite!important;
+  -webkit-animation-delay: .3s!important;
+  -webkit-animation-fill-mode: forwards!important;
+}
 .scene02.swiper-slide-active .people—img {
   -webkit-animation: people_r .8s 1;
 }
@@ -306,6 +311,12 @@ input {
     -webkit-transform: none;
     transform: none;
   }
+}
+.people-bg2 {
+  display: none;
+  -webkit-animation: bounceIn6 1s infinite!important;
+  -webkit-animation-delay: .3s!important;
+  -webkit-animation-fill-mode: forwards!important;
 }
 @-webkit-keyframes people_r {
   0%,
@@ -469,6 +480,22 @@ input {
     opacity: 1;
     -webkit-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1);
+  }
+}
+@-webkit-keyframes bounceIn6 {
+  0% {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+            transform: scale3d(1.05, 1.05, 1.05);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
   }
 }
 @-webkit-keyframes bounceIn3 {

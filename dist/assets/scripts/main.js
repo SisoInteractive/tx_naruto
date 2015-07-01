@@ -36,7 +36,8 @@ var app = {
             'p2-bg.jpg',
             'p2-title.png',
             'p3-1.png',
-            'p3-A.jpg',
+            'p3-bg.jpg',
+            'p3-A.png',
             'p3-alert-text.jpg',
             'p3-B.jpg',
             'p3-title.png',
@@ -151,6 +152,7 @@ var app = {
             }else{
                 that.find('.people—img').hide();
                 that.find('.B_img').fadeIn();
+                that.find('.people-bg2').fadeIn();
                 that.find('.p1-B-alert').addClass('active');
                 that.find('.p2-A-alert').removeClass('active');
                 error_sum = 1;
