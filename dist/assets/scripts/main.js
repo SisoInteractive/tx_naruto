@@ -22,6 +22,7 @@ var app = {
             'mz01.png',
             'mz02.png',
             'p1-1.png',
+            'hand-01.png',
             'p1-A.png',
             'p1-alert-text.jpg',
             'p1-B-alert.png',
@@ -46,7 +47,6 @@ var app = {
             'p4-B.png',
             'p4-bg.jpg',
             'p4-title.png',
-            'p6-bg.png',
             'p6-text.png',
             'sy01-1.png',
             'sy01.png',
@@ -58,7 +58,9 @@ var app = {
             'xh02.png',
             'yun-l.png',
             'yun-r.png',
-            'zan.png'
+            'zan.png',
+            'p4-yun2.jpg',
+            'p4-yun4.jpg'
         ];
         var imgPath = "assets/images/";
         var imgLength = imgSrcArr.length;
@@ -213,7 +215,7 @@ var app = {
         //  first time play BGM
         var initSound = function () {
             //  delay play
-            //$('#audio')[0].play();
+            $('#audio')[0].play();
 
             document.removeEventListener('touchstart', initSound, false);
         };
