@@ -3,15 +3,34 @@
 "use strict";
 
 var app = {
+    loadaudio:function(){
+        var audioLength = 0;
+        var audioEle1 = document.getElementById("audio");
+        var audioEle2 = document.getElementById("audio2");
+
+        audioEle1.oncanplaythrough = function() {
+            audioLength ++;
+            if(audioLength==1){
+                app.loadimg();
+            }
+        };
+        audioEle2.oncanplaythrough = function() {
+            audioLength ++;
+            if(audioLength==1){
+                app.loadimg();
+            }
+        };
+    },
     loadimg: function () {
 
         var imgSrcArr = [
             'bg.png',
+            'error.png',
+            'zan.png',
             'btn-2.png',
             'btn-bg.png',
             'btn-bg2.png',
             'btn.png',
-            'error.png',
             'hengfu.png',
             'index.jpg',
             'lm01-2.png',
@@ -22,7 +41,6 @@ var app = {
             'mz01.png',
             'mz02.png',
             'p1-1.png',
-            'hand-01.png',
             'p1-A.png',
             'p1-alert-text.jpg',
             'p1-B-alert.png',
@@ -59,7 +77,6 @@ var app = {
             'xh02.png',
             'yun-l.png',
             'yun-r.png',
-            'zan.png',
             'p4-yun2.jpg',
             'p4-yun4.jpg'
         ];
@@ -75,10 +92,12 @@ var app = {
             img.onload = function () {
                 loadedLength++;
 
+
                 /* check img load progress */
                 if (checkIsAllLoaded() && isLoaded == false) {
                     var runningTimerEnd = new Date();
                     isLoaded = true;
+                    $('.loding_box').fadeOut();
                     $('.swiper-container').fadeIn();
                     app.create()
                 }
@@ -87,7 +106,7 @@ var app = {
         }
 
         function checkIsAllLoaded () {
-            var loadedRate = 0.8;
+            var loadedRate = 1;
             return loadedLength / imgLength <= imgLength*loadedRate;
         }
     },
@@ -229,5 +248,5 @@ var app = {
 }
 $(function (){
     // init app
-    app.loadimg();
+    app.loadaudio();
 });
