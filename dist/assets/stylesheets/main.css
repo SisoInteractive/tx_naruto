@@ -79,10 +79,18 @@ input {
   left: 3.2%;
   z-index: 999;
 }
-.swiper-slide .btn_define img {
-  width: 92.9%;
+.swiper-slide .btn_define {
+  width: 92.6%;
+  position: absolute;
+  height: 12%;
   left: 3.2%;
   bottom: 1.5%;
+  background: url("../images/btn-2.png") no-repeat;
+  background-size: 100%;
+}
+.swiper-slide .btn_define:active {
+  width: 88%;
+  left: 6%;
 }
 .swiper-slide .dn_l {
   width: 44%;
@@ -123,15 +131,6 @@ input {
   z-index: 999;
   -webkit-animation: bounceIn2 1s 1;
 }
-.swiper-slide .hand {
-  width: 30.8%;
-  height: 14.5%;
-  top: 33%;
-  left: 28.1%;
-  position: absolute;
-  background: url("../images/hand-01.png") no-repeat;
-  background-size: 100%;
-}
 .swiper-slide .A_img,
 .swiper-slide .B_img {
   display: none;
@@ -153,11 +152,9 @@ input {
   z-index: 99;
   -webkit-animation: bounceIn 1.5s 1;
 }
-.swiper-slide .fenx_btn.active img {
-  opacity: 1!important;
-  display: block!important;
-  -webkit-animation: bounceIn .6s 1;
-  -webkit-animation-fill-mode: forwards ;
+.swiper-slide .fenx_btn:active img {
+  width: 80%!important;
+  right: 11.1%!important;
 }
 .swiper-slide .A_bg {
   opacity: 0;
@@ -289,9 +286,6 @@ input {
 .scene06 {
   background: #2f2e2c;
 }
-.scene06 .fenx_btn {
-  z-index: 99;
-}
 /* animation */
 @-webkit-keyframes bounceInLeft {
   0%,
@@ -330,10 +324,6 @@ input {
   -webkit-animation: bounceIn6 1s infinite!important;
   -webkit-animation-delay: .3s!important;
   -webkit-animation-fill-mode: forwards!important;
-}
-.btn_define:active img {
-  width: 88%;
-  left: 6%;
 }
 .loading_box {
   position: absolute;

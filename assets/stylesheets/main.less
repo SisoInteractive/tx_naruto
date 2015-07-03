@@ -89,13 +89,19 @@ input {
     z-index: 999;
   }
   .btn_define{
-    img{
-      width: 92.9%;
-      left: 3.2%;
-      bottom: 1.5%;
-    }
+    width: 92.6%;
+    position: absolute;height: 12%;
+    left: 3.2%;
+    bottom: 1.5%;
+    background: url("../images/btn-2.png") no-repeat;
+    background-size: 100%;
 
   }
+  .btn_define:active{
+    width: 88%;
+    left: 6%;
+  }
+
   .dn_l{
     width: 44%;
     position: absolute;
@@ -136,15 +142,7 @@ input {
     -webkit-animation: bounceIn2 1s 1;
   }
   .title{  }
-  .hand{
-    width: 30.8%;
-    height: 14.5%;
-    top: 33%;
-    left: 28.1%;
-    position: absolute;
-    background:url("../images/hand-01.png") no-repeat;
-    background-size: 100%;
-  }
+
   .A_img,.B_img{
     display: none;
   }
@@ -165,13 +163,13 @@ input {
     z-index: 99;
     -webkit-animation: bounceIn 1.5s 1;
   }
-  .fenx_btn.active{
+  .fenx_btn:active{
     img{
-      opacity: 1!important;
-      display: block!important;
-      -webkit-animation: bounceIn .6s 1;
-      -webkit-animation-fill-mode:forwards ;
+      width: 80%!important;
+      right: 11.1%!important;
     }
+  }
+  .fenx_btn{
 
   }
   .A_bg{
@@ -317,11 +315,8 @@ input {
 #audio { display: none; position: absolute; left: -5000px;}
 .scene06{
   background: #2f2e2c;
-  .fenx_btn{
-    z-index: 99;
-  }
-}
 
+}
 /* animation */
 @-webkit-keyframes bounceInLeft {
   0%, 60%, 75%, 90%, 100% {
@@ -364,12 +359,6 @@ input {
   -webkit-animation-fill-mode: forwards!important;
 }
 
-.btn_define:active{
-  img{
-    width: 88%;
-    left: 6%;
-  }
-}
 
 .loading_box{
   position: absolute;

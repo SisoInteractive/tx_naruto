@@ -226,7 +226,7 @@ var app = {
 
         //fenx_btn
         $('.fenx_btn').click(function(){
-            $(this).addClass('active')
+
         })
 
         //提示信息弹出 click
