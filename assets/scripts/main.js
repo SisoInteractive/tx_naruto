@@ -4,7 +4,10 @@
 
 var app = {
     loadimg: function () {
-
+        var audioEle1 = document.getElementById("audio");
+        var audioEle2 = document.getElementById("audio2");
+        audioEle1.oncanplaythrough = function() {};
+        audioEle2.oncanplaythrough = function() {};
         var imgSrcArr = [
             'bg.png',
             'error.png',
@@ -219,7 +222,11 @@ var app = {
             error_sum=-1;
             $('.alert_box').hide();
             $('.bg_zz').hide();
-            $('.reply').removeClass('active')
+            $('.reply').removeClass('active');
+            $('.people—img').hide();
+            $('.star').show();
+            $('.p1-B-alert').removeClass('active');
+            $('.p4-1-xin').show()
         })
 
         //fenx_btn
