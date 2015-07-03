@@ -105,7 +105,7 @@ var app = {
             img.onload = function () {
                 loadedLength++;
                 if( loading_val< 100 ){
-                    loading_val +=2;
+                    loading_val +=1.5;
                     $('.loading-text').html(loading_val)
                 }
 
@@ -269,6 +269,10 @@ var app = {
             app.mySwiper.unlockSwipes();
             app.mySwiper.slideNext();
             lockSwiper()
+            setTimeout(function(){
+                var audioEle2 = document.getElementById("audio2");
+                audioEle2.play();
+            },1000)
         })
 
         //  first time play BGM
