@@ -135,9 +135,6 @@ var app = {
         //lock Swiper
         lockSwiper();
 
-        //解决click 延迟事件
-        FastClick.attach(document.body);
-
 
         var error_sum = -1; //初始化用户选择 -1为未选中
         //click bin
@@ -179,9 +176,7 @@ var app = {
 
         //click btn_define
         $('.btn_define').click(function(){
-
             var that = $(this).parent();
-
             if(error_sum!=-1){
 
                 if(error_sum==0){
