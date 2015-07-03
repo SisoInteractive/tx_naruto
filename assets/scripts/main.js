@@ -20,6 +20,7 @@ var app = {
                 app.loadimg();
             }
         };
+        app.loadimg();
     },
     loadimg: function () {
 
