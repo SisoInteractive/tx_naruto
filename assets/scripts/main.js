@@ -105,11 +105,9 @@ var app = {
             img.onload = function () {
                 loadedLength++;
                 if( loading_val< 100 ){
-                    loading_val +=1.5;
+                    loading_val +=2;
                     $('.loading-text').html(loading_val)
                 }
-
-                console.log(loadedLength)
                 /* check img load progress */
                 if (checkIsAllLoaded() && isLoaded == false) {
                     var runningTimerEnd = new Date();
