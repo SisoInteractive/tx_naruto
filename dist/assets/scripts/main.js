@@ -78,26 +78,43 @@ var app = {
             'yun-l.png',
             'yun-r.png',
             'p4-yun2.jpg',
-            'p4-yun4.jpg'
+            'p4-yun4.jpg',
+            'p7-06.jpg',
+            'p7-01.jpg',
+            'p7-02.jpg',
+            'p7-03.jpg',
+            'p7-04.jpg',
+            'p7-05.jpg',
+            'p7-btn.png',
+            'p7-btn2.png',
+            'p6-btn.png',
+            'p6-btn2.png',
+            'p6-people.jpg',
+            'p7-ko.png',
+            'p6-text.png'
         ];
         var imgPath = "assets/images/";
         var imgLength = imgSrcArr.length;
         var loadedLength = 0;
         var isLoaded = false;
-
+        var loading_val = 0;
         for (var i = 0; i < imgLength; i++) {
             var img = new Image();
             img.src = imgPath + imgSrcArr[i];
 
             img.onload = function () {
                 loadedLength++;
+                if( loading_val< 100 ){
+                    loading_val +=2;
+                    $('.loading-text').html(loading_val)
+                }
 
-
+                console.log(loadedLength)
                 /* check img load progress */
                 if (checkIsAllLoaded() && isLoaded == false) {
                     var runningTimerEnd = new Date();
                     isLoaded = true;
-                    $('.loding_box').fadeOut();
+                    $('.loading_box').fadeOut();
                     $('.swiper-container').fadeIn();
                     app.create()
                 }
@@ -152,9 +169,8 @@ var app = {
         var Count_sum = 0; //统计打错结果
         //replay btn
         $('.reply').click(function(){
-            console.log( app_index );
-
-            console.log($('.swiper-slide').eq(app_index).html())
+            //console.log( app_index );
+            //console.log($('.swiper-slide').eq(app_index).html())
 
             var that = $(this).parent();
             var This = $(this);
@@ -215,6 +231,22 @@ var app = {
 
         })
 
+        //r_paly
+        $('#r_paly').click(function(){
+            app.mySwiper.unlockSwipes();
+            app.mySwiper.slideTo(0, 100, false);
+            lockSwiper();
+            error_sum=-1;
+            $('.alert_box').hide();
+            $('.bg_zz').hide();
+            $('.reply').removeClass('active')
+        })
+
+        //fenx_btn
+        $('.fenx_btn').click(function(){
+            $('.fenx_btn').removeClass('active')
+            $(this).addClass('active')
+        })
 
         //提示信息弹出 click
         $('.alert_box').click(function(){
@@ -231,6 +263,12 @@ var app = {
                 $('#title').html('太羞耻了!作为一个资深火影迷,我竟然被岸本老师亲手打了'+ Count_sum + '巴掌')
             }
 
+        })
+
+        $('.fx_btn2').click(function(){
+            app.mySwiper.unlockSwipes();
+            app.mySwiper.slideNext();
+            lockSwiper()
         })
 
         //  first time play BGM
