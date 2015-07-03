@@ -3,25 +3,6 @@
 "use strict";
 
 var app = {
-    loadaudio:function(){
-        var audioLength = 0;
-        var audioEle1 = document.getElementById("audio");
-        var audioEle2 = document.getElementById("audio2");
-
-        audioEle1.oncanplaythrough = function() {
-            audioLength ++;
-            if(audioLength==1){
-                app.loadimg();
-            }
-        };
-        audioEle2.oncanplaythrough = function() {
-            audioLength ++;
-            if(audioLength==1){
-                app.loadimg();
-            }
-        };
-        app.loadimg();
-    },
     loadimg: function () {
 
         var imgSrcArr = [
@@ -243,7 +224,6 @@ var app = {
 
         //fenx_btn
         $('.fenx_btn').click(function(){
-            $('.fenx_btn').removeClass('active')
             $(this).addClass('active')
         })
 
@@ -289,5 +269,5 @@ var app = {
 }
 $(function (){
     // init app
-    app.loadaudio();
+    app.loadimg();
 });
