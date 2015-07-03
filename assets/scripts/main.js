@@ -224,11 +224,6 @@ var app = {
             $('.p4-1-xin').show()
         })
 
-        //fenx_btn
-        $('.fenx_btn').click(function(){
-
-        })
-
         //提示信息弹出 click
         $('.alert_box').click(function(){
             app.mySwiper.unlockSwipes();
@@ -254,6 +249,7 @@ var app = {
                 var audioEle2 = document.getElementById("audio2");
                 audioEle2.play();
             },1000)
+            Count_sum++;
         })
 
         //  first time play BGM
