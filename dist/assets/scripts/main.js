@@ -138,17 +138,17 @@ var app = {
 
         var error_sum = -1; //初始化用户选择 -1为未选中
         //click bin
-        $('.btn').click(function(){
+        $('.btn').hammer().bind("tap", function(){
             app.mySwiper.unlockSwipes();
             app.mySwiper.slideNext();
             lockSwiper()
             error_sum = -1;
-        })
+        });
 
         //count Sum
         var Count_sum = 0; //统计打错结果
         //replay btn
-        $('.reply').click(function(){
+        $('.reply').hammer().bind("tap", function(){
             //console.log( app_index );
             //console.log($('.swiper-slide').eq(app_index).html())
 
@@ -175,7 +175,7 @@ var app = {
         })
 
         //click btn_define
-        $('.btn_define').click(function(){
+        $('.btn_define').hammer().bind("tap", function(){
             var that = $(this).parent();
             if(error_sum!=-1){
 
@@ -195,9 +195,10 @@ var app = {
                 audioEle2.play();
             }
 
+
         })
         //click mp3 box
-        $('.mp3-box').click(function(){
+        $('.mp3-box').hammer().bind("tap", function(){
             $(this).toggleClass('active');
             $(this).attr('src','assets/images/m-img-active.png')
             if(!audio.paused){
@@ -210,7 +211,7 @@ var app = {
         })
 
         //r_paly
-        $('#r_paly').click(function(){
+        $('#r_paly').hammer().bind("tap", function(){
             app.mySwiper.unlockSwipes();
             app.mySwiper.slideTo(0, 100, false);
             lockSwiper();
@@ -225,7 +226,7 @@ var app = {
         })
 
         //提示信息弹出 click
-        $('.alert_box').click(function(){
+        $('.alert_box').hammer().bind("tap", function(){
             app.mySwiper.unlockSwipes();
             app.mySwiper.slideNext();
             lockSwiper()
@@ -241,7 +242,7 @@ var app = {
 
         })
 
-        $('.fx_btn2').click(function(){
+        $('.fx_btn2').hammer().bind("tap", function(){
             app.mySwiper.unlockSwipes();
             app.mySwiper.slideNext();
             lockSwiper()
@@ -250,6 +251,7 @@ var app = {
                 audioEle2.play();
             },1000)
             Count_sum++;
+            console.log(Count_sum)
         })
 
         //  first time play BGM

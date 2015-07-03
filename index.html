@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta content="telephone=no" name="format-detection">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1">
     <meta name="apple-touch-fullscreen" content="no"/>
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
     <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
@@ -17,14 +17,7 @@
     <link rel="stylesheet" href="assets/stylesheets/swiper.min.css">
     <link rel="stylesheet/less" href="assets/stylesheets/main.less"/>
     <!-- endinjector -->
-    <script src="assets/scripts/jquery-2.1.3.min.js"></script>
-    <script src="assets/scripts/fastclick.js"></script>
-    <script src="assets/scripts/swiper.js"></script>
-    <script>
-        $(function() {
-            FastClick.attach(document.body);
-        });
-    </script>
+
 </head>
 <body>
 
@@ -261,9 +254,12 @@
 
 <!-- injector:js -->
 <!-- page -->
+<script src="assets/scripts/jquery-2.1.3.min.js"></script>
 <script src="//localhost:35729/livereload.js"></script>
+<script src="assets/scripts/swiper.js"></script>
+<script src="assets/scripts/hammer.min.js"></script>
+<script src="assets/scripts/jquery.hammer.js"></script>
 <script src="assets/scripts/main.js"></script>
-
 <!-- less compiler -->
 <script src="assets/scripts/less.min.js"></script>
 <!-- endinjector -->
