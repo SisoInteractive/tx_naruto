@@ -198,8 +198,8 @@ input {
   -webkit-animation: bounceIn 1.3s 1;
 }
 .scene06.swiper-slide-active .p6-01 {
-  -webkit-animation: out 2s 1;
-  -webkit-animation-delay: 1s;
+  opacity: 1;
+  -webkit-animation: out 3s 1;
   -webkit-animation-fill-mode: forwards;
 }
 .scene06.swiper-slide-active .fenx_people {
@@ -303,6 +303,9 @@ input {
 }
 .scene06 {
   background: #2f2f2c;
+}
+.scene06 .p6-01 {
+  opacity: 0;
 }
 /* animation */
 @-webkit-keyframes bounceInLeft {
@@ -412,7 +415,7 @@ input {
   -webkit-animation-delay: 2s!important;
 }
 @-webkit-keyframes p7_bg {
-  10% {
+  0% {
     background: url("../images/p7-01.jpg") no-repeat;
     background-size: 100%;
   }

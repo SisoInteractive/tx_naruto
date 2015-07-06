@@ -300,6 +300,7 @@ var app = {
         $('.fx_btn2').hammer().bind("tap", function(){
             app.mySwiper.unlockSwipes();
             app.mySwiper.slideNext();
+            //$('.fenx_people').hide()
             lockSwiper()
             var aodioTime = setInterval(function(){
                 var audioEle2 = document.getElementById("audio2");
