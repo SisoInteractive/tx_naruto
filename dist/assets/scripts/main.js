@@ -9,7 +9,6 @@ var app = {
         audioEle1.oncanplaythrough = function() {};
         audioEle2.oncanplaythrough = function() {};
         var imgSrcArr = [
-            'bg.png',
             'error.png',
             'zan.png',
             'btn-2.png',
@@ -97,9 +96,12 @@ var app = {
                 if (checkIsAllLoaded() && isLoaded == false) {
                     var runningTimerEnd = new Date();
                     isLoaded = true;
-                    $('.loading_box').fadeOut();
-                    $('.swiper-container').fadeIn();
-                    app.create()
+                    setTimeout(function(){
+                        $('.loading_box').hide();
+                        $('.swiper-container').fadeIn();
+                        app.create()
+                    },2000)
+
                 }
 
             };
