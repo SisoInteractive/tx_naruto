@@ -118,40 +118,44 @@ var app = {
 
             img.onload = function () {
                 loadedLength++;
-                if( loading_val< 56 ){
+                if( loading_val< 68 ){
                     loading_val +=1;
                 }
+                if( loading_val >67 ){
+                    var timenumber = 0
+                    /* loading animation */
+                    var settime = setInterval(function(){
 
-                var timenumber = 0
-                /* loading animation */
-                var settime = setInterval(function(){
+                        $('.loading-text').html(timenumber+'%');
+                        if( timenumber == 100 ){
+                            /* check img load progress */
+                            if ( checkIsAllLoaded() && isLoaded == false && timenumber > 99) {
+                                isLoaded = true;
+                                setTimeout(function(){
+                                    $('.loading_box').hide();
+                                    $('.swiper-container').fadeIn();
+                                    app.create()
+                                },700)
 
-                    $('.loading-text').html(timenumber+'%');
-                    if( timenumber == 100 ){
-                        /* check img load progress */
-                        if ( checkIsAllLoaded() && isLoaded == false && timenumber > 98) {
-                            isLoaded = true;
-                            setTimeout(function(){
-                                $('.loading_box').hide();
-                                $('.swiper-container').fadeIn();
-                                app.create()
-                            },700)
-
+                            }
                         }
-                    }
-                    else{
-                        timenumber += 1;
-                    }
-                    if( timenumber > 10 && timenumber <30 ){ $('.loading-body').attr("src",'assets/images/loading-1.jpg') }
-                    if( timenumber > 30 && timenumber <50 ){ $('.loading-body').attr("src",'assets/images/loading-2.jpg') }
-                    if( timenumber > 50 && timenumber <70 ){ $('.loading-body').attr("src",'assets/images/loading-3.jpg') }
-                    if( timenumber > 70 && timenumber <90 ){ $('.loading-body').attr("src",'assets/images/loading-4.jpg') }
-                    if( timenumber > 90 && timenumber <100 ){ $('.loading-body').attr("src",'assets/images/loading-5.jpg') }
-                    setTimeout(function(){
-                        clearInterval(settime);
-                    },2500)
+                        else{
+                            timenumber += 1;
+                        }
+                        if( timenumber > 10 && timenumber <30 ){ $('.loading-body').attr("src",'assets/images/loading-1.jpg') }
+                        if( timenumber > 30 && timenumber <50 ){ $('.loading-body').attr("src",'assets/images/loading-2.jpg') }
+                        if( timenumber > 50 && timenumber <70 ){ $('.loading-body').attr("src",'assets/images/loading-3.jpg') }
+                        if( timenumber > 70 && timenumber <90 ){ $('.loading-body').attr("src",'assets/images/loading-4.jpg') }
+                        if( timenumber > 90 && timenumber <100 ){ $('.loading-body').attr("src",'assets/images/loading-5.jpg') }
 
-                },20)
+                        if( timenumber > 100 ){
+                            clearInterval(settime);
+                        }
+
+                    },20)
+                }
+
+
 
 
             };
@@ -297,10 +301,15 @@ var app = {
             app.mySwiper.unlockSwipes();
             app.mySwiper.slideNext();
             lockSwiper()
-            setTimeout(function(){
+            var aodioTime = setInterval(function(){
                 var audioEle2 = document.getElementById("audio2");
                 audioEle2.play();
-            },1000)
+                setTimeout(function(){
+                    clearInterval(aodioTime);
+                },4000)
+
+            },850)
+
             Count_sum++;
             console.log(Count_sum)
         })
