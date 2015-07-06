@@ -3,7 +3,36 @@
 "use strict";
 
 var app = {
-    loadimg: function () {
+        before_loading_img:function(){
+            var befireimg = [
+                'bg.png',
+                'loading-1.jpg',
+                'loading-2.jpg',
+                'loading-3.jpg',
+                'loading-4.jpg',
+                'loading-5.jpg',
+                'loading-text.jpg'
+            ]
+            var imgPath = "assets/images/";
+            var imgLength = befireimg.length;
+            var loadedLength = 0;
+            for (var i = 0; i < imgLength; i++) {
+                var img = new Image();
+                img.src = imgPath + befireimg[i];
+
+                img.onload = function () {
+                    loadedLength++;
+                    /* check img load progress */
+                    if( loadedLength == 7 ){
+                        app.loadimg() // 加载动画结束，进行后续加载
+                    }
+
+                };
+            }
+
+        },
+
+        loadimg: function () {
         var audioEle1 = document.getElementById("audio");
         var audioEle2 = document.getElementById("audio2");
         audioEle1.oncanplaythrough = function() {};
@@ -88,28 +117,47 @@ var app = {
 
             img.onload = function () {
                 loadedLength++;
-                if( loading_val< 100 ){
-                    loading_val +=2;
-                    $('.loading-text').html(loading_val)
+                if( loading_val< 56 ){
+                    loading_val +=1;
                 }
-                /* check img load progress */
-                if (checkIsAllLoaded() && isLoaded == false) {
-                    var runningTimerEnd = new Date();
-                    isLoaded = true;
-                    setTimeout(function(){
-                        $('.loading_box').hide();
-                        $('.swiper-container').fadeIn();
-                        app.create()
-                    },2000)
 
-                }
+                var timenumber = 0
+                /* loading animation */
+                var settime = setInterval(function(){
+
+                    $('.loading-text').html(timenumber+'%');
+                    if( timenumber == 100 ){
+                        /* check img load progress */
+                        if ( checkIsAllLoaded() && isLoaded == false && timenumber > 98) {
+                            isLoaded = true;
+                            setTimeout(function(){
+                                $('.loading_box').hide();
+                                $('.swiper-container').fadeIn();
+                                app.create()
+                            },700)
+
+                        }
+                    }
+                    else{
+                        timenumber += 1;
+                    }
+                    if( timenumber > 10 && timenumber <30 ){ $('.loading-body').attr("src",'assets/images/loading-1.jpg') }
+                    if( timenumber > 30 && timenumber <50 ){ $('.loading-body').attr("src",'assets/images/loading-2.jpg') }
+                    if( timenumber > 50 && timenumber <70 ){ $('.loading-body').attr("src",'assets/images/loading-3.jpg') }
+                    if( timenumber > 70 && timenumber <90 ){ $('.loading-body').attr("src",'assets/images/loading-4.jpg') }
+                    if( timenumber > 90 && timenumber <100 ){ $('.loading-body').attr("src",'assets/images/loading-5.jpg') }
+                    setTimeout(function(){
+                        clearInterval(settime);
+                    },2500)
+
+                },20)
+
 
             };
         }
 
         function checkIsAllLoaded () {
-            var loadedRate = 1;
-            return loadedLength / imgLength <= imgLength*loadedRate;
+            return loadedLength / imgLength == 1;
         }
     },
 
@@ -271,5 +319,5 @@ var app = {
 }
 $(function (){
     // init app
-    app.loadimg();
+    app.before_loading_img();
 });

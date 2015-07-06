@@ -14,7 +14,7 @@ html {
 body {
   height: 100%;
   overflow: hidden;
-  background: #2f2e2c;
+  background: #efeddd;
 }
 a {
   text-decoration: none;
@@ -148,9 +148,12 @@ input {
   display: none;
 }
 .swiper-slide .fenx_text {
+  opacity: 0;
   position: absolute;
   z-index: 99;
-  -webkit-animation: bounceIn 1.5s 1;
+}
+.swiper-slide .fenx_people {
+  opacity: 0;
 }
 .swiper-slide .fenx_btn:active img {
   width: 80%!important;
@@ -193,6 +196,21 @@ input {
 }
 .scene06.swiper-slide-active .fenx_text {
   -webkit-animation: bounceIn 1.3s 1;
+}
+.scene06.swiper-slide-active .p6-01 {
+  -webkit-animation: out 2s 1;
+  -webkit-animation-delay: 1s;
+  -webkit-animation-fill-mode: forwards;
+}
+.scene06.swiper-slide-active .fenx_people {
+  -webkit-animation: bounceIn8 .8s 1;
+  -webkit-animation-delay: 1.9s;
+  -webkit-animation-fill-mode: forwards;
+}
+.scene06.swiper-slide-active .fenx_text {
+  -webkit-animation: bounceIn 1.5s 1;
+  -webkit-animation-delay: 1.9s;
+  -webkit-animation-fill-mode: forwards;
 }
 .scene04.swiper-slide-active .people—img {
   -webkit-animation: bounceIn .7s 1;
@@ -284,7 +302,7 @@ input {
   left: -5000px;
 }
 .scene06 {
-  background: #2f2e2c;
+  background: #2f2f2c;
 }
 /* animation */
 @-webkit-keyframes bounceInLeft {
@@ -333,20 +351,28 @@ input {
   width: 100%;
   text-align: center;
   font-size: 20px;
-  color: #f1ede2;
+  color: #f3efe3;
 }
 .loading_box img {
   position: absolute;
-  top: 30%;
-  width: 34%;
-  left: 33%;
+  width: 25.2%;
+  left: 36.9%;
+  top: 23.4%;
+}
+.loading_box .loading-img {
+  position: absolute;
+  color: #000;
+  top: 47.7%;
+  width: 30.7%;
+  font-size: 18px;
+  left: 34.4%;
 }
 .loading_box .loading-text {
   position: absolute;
   color: #000;
-  top: 43.2%;
-  font-size: 18px;
-  right: 49.7%;
+  top: 42.7%;
+  right: 43%;
+  font-size: 20px;
 }
 .scene07 {
   background: #302f2d;
@@ -642,6 +668,14 @@ input {
   }
   100% {
     opacity: 1;
+  }
+}
+@-webkit-keyframes out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
 @-webkit-keyframes bounceLeft {
