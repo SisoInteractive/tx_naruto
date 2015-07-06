@@ -401,18 +401,18 @@ input {
 .scene07.swiper-slide-active .index-body {
   background: url("../images/p7-01.jpg") no-repeat;
   background-size: 100%;
-  -webkit-animation: p7_bg .3s 1!important;
+  -webkit-animation: p7_bg .3s 9!important;
   -webkit-animation-fill-mode: forwards!important;
   -webkit-animation-delay: 1s!important;
 }
 .scene07.swiper-slide-active .p7-ko {
-  -webkit-animation: bounceIn6 1s 1!important;
+  -webkit-animation: bounceIn6 4s 1!important;
   -webkit-animation-delay: 1.2s!important;
 }
 .scene07.swiper-slide-active .p7-06 {
   -webkit-animation: bounceIn8 1s 1!important;
   -webkit-animation-fill-mode: forwards!important;
-  -webkit-animation-delay: 2s!important;
+  -webkit-animation-delay: 4s!important;
 }
 @-webkit-keyframes p7_bg {
   0% {
