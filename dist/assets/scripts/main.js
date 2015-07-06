@@ -104,7 +104,8 @@ var app = {
             'p6-btn2.png',
             'p6-people.jpg',
             'p7-ko.png',
-            'p6-text.png'
+            'p6-text.png',
+            'p6-02.jpg'
         ];
         var imgPath = "assets/images/";
         var imgLength = imgSrcArr.length;
